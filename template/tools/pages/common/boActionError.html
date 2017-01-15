@@ -1,0 +1,39 @@
+
+<@s.iterator value="boActionMessages" var="bam">
+<@s.if test="%{#bam.type==@com.sample.helper.SampleActionMessage@SUCCESS}">
+<div class="success-input radius">
+    
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  <strong>Success!</strong> <@s.property value="#bam.message" escape="false"/>
+</div>
+    
+</div>
+</@s.if>
+<@s.if test="%{#bam.type==@com.sample.helper.SampleActionMessage@ERROR}">
+<div class="success-input radius">
+    
+    <div class="alert alert-danger">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  <strong>Failed!</strong> <@s.property value="#bam.message" escape="false"/>
+</div>
+    
+</div>
+</@s.if>
+<@s.if test="%{#bam.type==@com.sample.helper.SampleActionMessage@NOTIFICATION}">
+<div class="success-input radius">
+    
+    <div class="alert alert-info">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  <strong>Info!</strong> <@s.property value="#bam.message" escape="false"/>
+</div>
+</@s.if>
+<@s.if test="%{#bam.type==@com.sample.helper.SampleActionMessage@WARNING}">
+<div class="success-input radius">
+    
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+  <strong>Warning!</strong> <@s.property value="#bam.message" escape="false"/>
+</div>
+</@s.if>
+</@s.iterator>

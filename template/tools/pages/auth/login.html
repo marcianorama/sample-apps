@@ -8,13 +8,15 @@
 
 
         <link rel="stylesheet" href="css/style.css">
-
+        <link rel="stylesheet" href="css/custom.css">
 
     </head>
 
     <body>
+        <@s.if test="hasBoActionMessages()">
+        <#include "/pages/common/boActionError.html"/>
+        </@s.if>
         <div class="form">
-
             <ul class="tab-group">
                 <li class="tab active"><a href="#signup">Sign Up</a></li>
                 <li class="tab"><a href="#login">Log In</a></li>
@@ -65,7 +67,7 @@
                 <div id="login">   
                     <h1>Welcome Back!</h1>
 
-                    <form action="LoginAction_login.tes" method="post" id="formLog">
+                    <form action="LoginAction_loginSubmit.tes" method="post" id="formLog">
 
                         <div class="field-wrap">
                             <label>
@@ -100,11 +102,11 @@
     </body>
 
     <script>
-        $('#btLog').click(function(){
-           $("#formLog").submit(); 
+        $('#btLog').click(function() {
+            $("#formLog").submit();
         });
-        $('#btReg').click(function(){
-           $("#formReg").submit(); 
+        $('#btReg').click(function() {
+            $("#formReg").submit();
         });
     </script>
 </html>
